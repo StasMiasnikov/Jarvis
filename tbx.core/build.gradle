@@ -1,0 +1,28 @@
+dependencies{
+
+
+
+	compile project(':tbx.api')
+	
+
+	compile     'org.osgi:org.osgi.core:4.3.0'
+	compile 	'org.osgi:org.osgi.compendium:4.3.0'
+	runtime     'org.eclipse.osgi:org.eclipse.osgi:3.7.1'
+
+testCompile 'junit:junit:4.12'
+testCompile project(':tbx.testing')
+
+}
+
+task serviceLoaderPackaging(type:Copy){
+	outputs.upToDateWhen { false }
+	from fileTree(sourceSets.main.resources.asPath).files
+	into  sourceSets.main.output.classesDir.path + '/META-INF/services'
+
+
+}
+
+jar.dependsOn serviceLoaderPackaging
+
+
+

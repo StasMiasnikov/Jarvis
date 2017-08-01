@@ -1,0 +1,11 @@
+apply plugin: 'application'
+
+defaultTasks 'run'
+dependencies {
+  
+	compile project(':tbx.api')
+    runtime project(':tbx.core')
+}
+
+
+mainClassName ='tbx.command.line.ToolBoxCommandLineRunner'

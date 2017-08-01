@@ -1,0 +1,6 @@
+include 'tbx.api'
+include 'tbx.core'
+include 'tbx.command.line'
+include 'tbx.web'
+include 'tbx.testing'
+include ':TBConnectors:tbx.connectors.persistance'
