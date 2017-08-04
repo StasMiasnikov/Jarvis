@@ -21,6 +21,7 @@ before_script:
   - git rm --cached --ignore-unmatch index.html
 
 script:
+  - chmod -R  777 * 
   - ./SpringBasedStructure/gradlew clean publish -i --continue
   - ./SpringBasedStructure/gradlew -b finalize.gradle finalize -i
 
